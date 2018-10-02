@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentTranslationCenter.API", "DocumentTranslationCenter.API\DocumentTranslationCenter.API.csproj", "{DFC39A8F-ADC9-4F2F-AA1D-92C9B9C66E71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentTranslationCenter.Sandbox", "DocumentTranslationCenter.Sandbox\DocumentTranslationCenter.Sandbox.csproj", "{56626C42-A63B-4C2F-8983-ABD86206516C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DFC39A8F-ADC9-4F2F-AA1D-92C9B9C66E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFC39A8F-ADC9-4F2F-AA1D-92C9B9C66E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFC39A8F-ADC9-4F2F-AA1D-92C9B9C66E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56626C42-A63B-4C2F-8983-ABD86206516C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56626C42-A63B-4C2F-8983-ABD86206516C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56626C42-A63B-4C2F-8983-ABD86206516C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56626C42-A63B-4C2F-8983-ABD86206516C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Core\Domain\DTO\" />
+    <Folder Include="Core\Services\" />
+    <Folder Include="Core\Repositories\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
