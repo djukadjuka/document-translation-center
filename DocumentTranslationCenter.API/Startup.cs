@@ -15,6 +15,8 @@ namespace DocumentTranslationCenter.API
 {
     public class Startup
     {
+        public const string DefaultOpen = "DefaultOPEN";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,6 +33,14 @@ namespace DocumentTranslationCenter.API
                 .AddDbContext<DtcDbContext>(options => options
                 .UseSqlServer(Configuration
                 .GetConnectionString("DevConnection")));
+            // add CORS
+            services
+                .AddCors(options => options
+                .AddPolicy(Startup.DefaultOpen, builder => builder
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin()
+            ));
 
             services.AddMvc();
         }
@@ -46,8 +56,8 @@ namespace DocumentTranslationCenter.API
                 {
                     DtcDbContext dbContext = serviceScope.ServiceProvider.GetService<DtcDbContext>();
 
-                    // context.SeedDatabase();
-                    // context.CreateTriggers();
+                    dbContext.SeedData();
+                    dbContext.CreateTriggers();
                 }
             }
 

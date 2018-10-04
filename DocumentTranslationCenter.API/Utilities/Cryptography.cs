@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -22,6 +23,27 @@ namespace DocumentTranslationCenter.API.Utilities
             }
 
             return Convert.ToBase64String(salt);
+        }
+
+        /// <summary>
+        /// Hashes a password using base64 salt, 10000 iterations and 32 bytes
+        /// </summary>
+        /// <param name="password">The password that needs to be hashed.</param>
+        /// <param name="salt">The salt used for hashing a password.</param>
+        /// <returns>Base64 string of the hashed password.</returns>
+        public static string HashPassword(string password, string salt)
+        {
+            byte[] saltBytes = Convert.FromBase64String(salt);
+            string hashedPassword = Convert.ToBase64String(
+                KeyDerivation.Pbkdf2(
+                        password: password,
+                        salt: saltBytes,
+                        prf: KeyDerivationPrf.HMACSHA1,
+                        iterationCount: 10000,
+                        numBytesRequested: 256 / 8
+                    )
+                );
+            return hashedPassword;
         }
     }
 }
